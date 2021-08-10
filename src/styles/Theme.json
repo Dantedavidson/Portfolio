@@ -1,4 +1,17 @@
 {
   "background": "#0e0e15",
-  "textLight": "#fff"
+  "textLight": "#fff",
+  "fontMain": "'Roboto', sans-serif",
+  "fontHighlight": "'STIX Two Text', serif",
+  "pageWidth": "80%",
+  "padding": {
+    "small": "1rem",
+    "medium": "2rem",
+    "large": "3rem"
+  },
+  "media": {
+    "mobileDown": "@media(max-width: 39.9375em)",
+    "tabletUp": "@media(min-width: 40em)",
+    "desktopUp": "@media(min-width: 64em)"
+  }
 }

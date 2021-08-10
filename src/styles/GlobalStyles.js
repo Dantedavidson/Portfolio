@@ -12,6 +12,7 @@ export default createGlobalStyle`
 
 body{
     background-color: ${({ theme }) => theme.background};
-    color:${({ theme }) => theme.textLight}
+    color:${({ theme }) => theme.textLight};
+    font-family:${({ theme }) => theme.fontMain} ;
 }
 `
