@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { darken } from "polished"
 
 export const NavWrapper = styled.div`
   width: 100%;
@@ -15,14 +16,14 @@ export const NavWrapper = styled.div`
 
 export const Nav = styled.nav`
   position: relative;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-top: ${props => props.theme.padding.small};
 
   //Mobile styles
   ${props => props.theme.media.mobileDown} {
     text-align: center;
     transition: all 600ms ease;
-    height: ${({ display }) => (display ? "8.65rem" : "0")};
+    height: ${({ display }) => (display ? "10.65rem" : "0")};
     margin-top: ${({ display }) => (display ? "10vh" : "0")};
     overflow: hidden;
   }
@@ -34,6 +35,7 @@ export const Nav = styled.nav`
     width: ${props => props.theme.pageWidth};
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.5rem;
   }
 
   ${props => props.theme.media.desktopUp} {
@@ -43,14 +45,8 @@ export const Nav = styled.nav`
 export const NavItems = styled.ul`
   list-style: none;
 
-  &:nth-child(1) {
-    ${props => props.theme.media.tabletUp} {
-      display: flex;
-    }
-  }
-
   &:nth-child(2) {
-    width: 80px;
+    width: 100px;
     display: flex;
     justify-content: space-between;
   }
@@ -61,19 +57,33 @@ export const NavItems = styled.ul`
     &:nth-child(2) {
       margin: auto;
     }
+    > * {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+
+  ${props => props.theme.media.tabletUp} {
+    &:nth-child(1) {
+      display: flex;
+    }
   }
 `
 
-export const NavItem = styled.li`
-  ${props => props.theme.media.mobileDown} {
-    padding-bottom: ${props => props.theme.padding.small};
+export const NavItem = styled.a`
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => darken(0.2, props.theme.textLight)};
   }
+
   ${props => props.theme.media.tabletUp} {
     &:nth-child(2) {
       margin-left: 2rem;
     }
   }
 `
+
 export const NavToggleWrapper = styled.div`
   position: absolute;
   display: block;
@@ -115,34 +125,8 @@ export const NavToggle = styled.span`
   background-color: ${props => props.theme.textLight};
 `
 
-// position: absolute;
-//   top: 50%;
-//   left: 0;
-//   width: 2rem;
-//   height: 2px;
-//   background-color: ${props => props.theme.textLight};
-//   visibility: ${({ display }) => (display ? "hidden" : "visible")};
-//   /* opacity: ${({ display }) => (display ? 0 : 1)}; */
-
-//   &:before,
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     left: 0;
-//     width: 2rem;
-//     height: 2px;
-//     visibility: visible;
-//     transition: all 1s ease;
-//     transform-origin: 5px 1px;
-//     background-color: ${props => props.theme.textLight};
-//   }
-
-//   &:before {
-//     top: -0.5rem;
-//     transform: ${({ display }) => (display ? "rotate(45deg);" : "")};
-//   }
-
-//   &:after {
-//     top: 0.5rem;
-//     transform: ${({ display }) => (display ? "rotate(-45deg);" : "")};
-//   }
+export const SocialIcon = styled.a`
+  &:hover {
+    color: ${props => darken(0.2, props.theme.textLight)};
+  }
+`

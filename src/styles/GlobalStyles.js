@@ -15,4 +15,9 @@ body{
     color:${({ theme }) => theme.textLight};
     font-family:${({ theme }) => theme.fontMain} ;
 }
+
+a {
+    text-decoration: none;
+  color: inherit;
+}
 `
