@@ -86,24 +86,37 @@ export const Image = styled.img`
 
 export const Button = styled.div`
   display: inline-block;
-  width: 100%;
-  max-width: 28.25rem;
+  width: 28.25rem;
   align-self: center;
   padding: 0.5rem 1rem;
   border: 1px solid #fff;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+  transition: all 500ms ease-out;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #fff;
+
+  &:hover {
+    color: #000;
+    box-shadow: inset 28.25rem 0 0 0 #fff;
+  }
 
   ${props => props.theme.media.desktopUp} {
-    width: 150px;
+    width: 9.375rem;
     align-self: flex-start;
-    transform: translateY(-1rem);
+
+    &:hover {
+      box-shadow: inset 9.375rem 0 0 0 #fff;
+    }
   }
 
   ${props => props.theme.media.desktopXLUp} {
-    width: 175px;
+    width: 10.9375rem;
     align-self: flex-start;
-    transform: translateY(-1rem);
+
+    &:hover {
+      box-shadow: inset 10.9375rem 0 0 0 #fff;
+    }
   }
 `

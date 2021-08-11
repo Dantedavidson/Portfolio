@@ -31,6 +31,11 @@ export const Section = styled.section`
     width: ${props => props.theme.width.medium};
   }
 
+  ${props => props.theme.media.desktopUp} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   ${props => props.theme.media.desktopXLUp} {
     width: ${props => props.theme.width.large};
   }
