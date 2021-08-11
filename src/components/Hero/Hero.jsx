@@ -1,10 +1,12 @@
 import React from "react"
 import {
   HeroSection,
-  FlexContainer,
   Grid,
+  FlexContainer,
+  Container,
   Title,
   Text,
+  Button,
   Image,
 } from "./Hero.styles"
 
@@ -22,10 +24,11 @@ function Hero({ data }) {
     <HeroSection>
       <Grid>
         <FlexContainer>
-          <FlexContainer>
+          <Container>
             <Title>{title}</Title>
             <Text>{text}</Text>
-          </FlexContainer>
+          </Container>
+          <Button>Projects</Button>
         </FlexContainer>
         <Image src={img} alt={alt} />
       </Grid>

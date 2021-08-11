@@ -24,6 +24,8 @@ export const Section = styled.section`
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
+  padding-left: ${props => props.theme.padding.medium};
+  padding-right: ${props => props.theme.padding.medium};
 
   ${props => props.theme.media.tabletUp} {
     width: ${props => props.theme.width.medium};
