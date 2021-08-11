@@ -32,13 +32,14 @@ export const Nav = styled.nav`
   ${props => props.theme.media.tabletUp} {
     display: flex;
     justify-content: space-between;
-    width: ${props => props.theme.pageWidth};
+    width: ${props => props.theme.width.medium};
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5rem;
   }
 
-  ${props => props.theme.media.desktopUp} {
+  ${props => props.theme.media.desktopXLUp} {
+    width: ${props => props.theme.width.large};
   }
 `
 

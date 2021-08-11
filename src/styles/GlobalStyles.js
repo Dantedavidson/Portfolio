@@ -1,9 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 export default createGlobalStyle`
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=STIX+Two+Text:wght@400;600;700&display=swap');
-   
 *{
     box-sizing:border-box;
     margin:0;
@@ -20,4 +17,19 @@ a {
     text-decoration: none;
   color: inherit;
 }
+`
+
+export const Section = styled.section`
+  width: ${props => props.theme.width.small};
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+
+  ${props => props.theme.media.tabletUp} {
+    width: ${props => props.theme.width.medium};
+  }
+
+  ${props => props.theme.media.desktopXLUp} {
+    width: ${props => props.theme.width.large};
+  }
 `

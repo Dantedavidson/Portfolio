@@ -3,7 +3,11 @@
   "textLight": "#fff",
   "fontMain": "'Roboto', sans-serif",
   "fontHighlight": "'STIX Two Text', serif",
-  "pageWidth": "80%",
+  "width": {
+    "small": "100%",
+    "medium": "80%",
+    "large": "75rem"
+  },
   "padding": {
     "small": "1rem",
     "medium": "2rem",
@@ -12,6 +16,7 @@
   "media": {
     "mobileDown": "@media(max-width: 39.9375em)",
     "tabletUp": "@media(min-width: 40em)",
-    "desktopUp": "@media(min-width: 64em)"
+    "desktopUp": "@media(min-width: 64em)",
+    "desktopXLUp": "@media(min-width:90em)"
   }
 }
