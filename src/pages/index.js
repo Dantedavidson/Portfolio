@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import GlobalStyles from "../styles/GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import theme from "../styles/Theme.json"
-import { Navbar, Hero } from "../components/index"
+import { Navbar, Hero, Projects } from "../components/index"
 
 export default function Home({ data }) {
   console.log(data)
@@ -18,6 +18,7 @@ export default function Home({ data }) {
       <GlobalStyles />
       <Navbar />
       <Hero data={nodes[0]} />
+      <Projects />
     </ThemeProvider>
   )
 }

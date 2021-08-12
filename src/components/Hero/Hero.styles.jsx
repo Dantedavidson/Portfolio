@@ -40,9 +40,8 @@ export const Title = styled.h1`
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
-  font-family: "STIX Two Text", serif;
   font-weight: 700;
-
+  font-family: "STIX Two Text", serif;
   ${props => props.theme.media.desktopUp} {
     font-size: 3rem;
     text-align: left;
@@ -86,37 +85,48 @@ export const Image = styled.img`
 
 export const Button = styled.div`
   display: inline-block;
-  width: 28.25rem;
+  position: relative;
+  width: 80%;
   align-self: center;
   padding: 0.5rem 1rem;
   border: 1px solid #fff;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  transition: all 500ms ease-out;
   cursor: pointer;
-  box-shadow: inset 0 0 0 0 #fff;
+  transition: all 500ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #000;
-    box-shadow: inset 28.25rem 0 0 0 #fff;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #fff;
+    transition: all 300ms ease-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &:hover:before,
+  &:focus:before {
+    transform: scaleX(1);
   }
 
   ${props => props.theme.media.desktopUp} {
     width: 9.375rem;
     align-self: flex-start;
-
-    &:hover {
-      box-shadow: inset 9.375rem 0 0 0 #fff;
-    }
   }
 
   ${props => props.theme.media.desktopXLUp} {
     width: 10.9375rem;
     align-self: flex-start;
-
-    &:hover {
-      box-shadow: inset 10.9375rem 0 0 0 #fff;
-    }
   }
 `

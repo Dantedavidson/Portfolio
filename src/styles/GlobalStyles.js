@@ -13,6 +13,10 @@ body{
     font-family:${({ theme }) => theme.fontMain} ;
 }
 
+ h1, h2{
+  
+ }
+
 a {
     text-decoration: none;
   color: inherit;
