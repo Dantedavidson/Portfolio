@@ -1,14 +1,21 @@
 import React from "react"
 import { Section } from "../../styles/GlobalStyles"
-import { Filter } from "../index"
-function Projects() {
+import { CardContainer, ProjectSection } from "./Projects.styles.jsx"
+import { Filter, Card } from "../index"
+
+function Projects({ posts }) {
   const onClick = tag => {
     console.log(tag)
   }
   return (
-    <Section>
+    <ProjectSection>
       <Filter onClick={onClick} />
-    </Section>
+      <CardContainer>
+        {posts.map(post => (
+          <Card data={post} />
+        ))}
+      </CardContainer>
+    </ProjectSection>
   )
 }
 

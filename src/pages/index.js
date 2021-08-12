@@ -9,16 +9,17 @@ export default function Home({ data }) {
   console.log(data)
   const {
     allContentfulLead: {
-      group: [{ nodes }],
+      group: [{ nodes: lead }],
     },
+    allContentfulPortfolioPost: { nodes: posts },
   } = data
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Navbar />
-      <Hero data={nodes[0]} />
-      <Projects />
+      <Hero data={lead[0]} />
+      <Projects posts={posts} />
     </ThemeProvider>
   )
 }
@@ -31,9 +32,7 @@ export const query = graphql`
           title
           portrait {
             description
-            file {
-              url
-            }
+            gatsbyImageData
           }
           text {
             text
@@ -48,9 +47,7 @@ export const query = graphql`
         subHeading
         projectImage {
           description
-          file {
-            url
-          }
+          gatsbyImageData
         }
         projectBrief {
           projectBrief

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Section } from "../../styles/GlobalStyles"
 
 export const HeroSection = styled(Section)`
@@ -66,7 +67,7 @@ export const Text = styled.p`
   }
 `
 
-export const Image = styled.img`
+export const Image = styled(GatsbyImage)`
   justify-self: center;
   width: 250px;
   border-radius: 50%;

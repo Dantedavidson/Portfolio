@@ -1,4 +1,5 @@
 import React from "react"
+import { getImage } from "gatsby-plugin-image"
 import {
   HeroSection,
   Grid,
@@ -14,12 +15,12 @@ function Hero({ data }) {
   const {
     title,
     text: { text },
-    portrait: {
-      file: { url: img },
-    },
+    portrait,
     portrait: { description: alt },
   } = data
 
+  const image = getImage(portrait)
+  console.log(image, portrait)
   return (
     <HeroSection>
       <Grid>
@@ -30,7 +31,7 @@ function Hero({ data }) {
           </Container>
           <Button>Projects</Button>
         </FlexContainer>
-        <Image src={img} alt={alt} />
+        <Image image={image} alt={alt} />
       </Grid>
     </HeroSection>
   )

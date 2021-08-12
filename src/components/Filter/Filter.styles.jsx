@@ -18,6 +18,7 @@ export const Title = styled.h2`
 
 export const TagContainer = styled.div`
   display: flex;
+  margin-bottom: 3rem;
 `
 
 export const Tag = styled.div`
