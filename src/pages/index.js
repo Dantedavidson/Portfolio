@@ -7,7 +7,6 @@ import { Navbar, Hero, Projects } from "../components/index"
 import { Footer } from "../components/index"
 
 export default function Home({ data }) {
-  console.log(data)
   const {
     allContentfulLead: {
       group: [{ nodes: lead }],

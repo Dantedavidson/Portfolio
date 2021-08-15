@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Title, TagContainer, Tag } from "./Filter.styles"
 
-function Filter({ onClick }) {
+function Filter({ onClick ,filter }) {
   const tags = useStaticQuery(graphql`
     query Field {
       allContentfulPortfolioPost {
@@ -20,7 +20,7 @@ function Filter({ onClick }) {
         <Tag
           active
           onClick={() => {
-            onClick("All")
+            onClick("all",filter)
           }}
         >
           All
@@ -28,7 +28,7 @@ function Filter({ onClick }) {
         {tags.map((tag, index) => (
           <Tag
             onClick={() => {
-              onClick(tag.fieldValue)
+              onClick(tag.fieldValue,filter)
             }}
             key={index}
           >

@@ -1,23 +1,14 @@
 import styled from "styled-components"
 
 export const FooterSection = styled.footer`
-width: ${props => props.theme.width.small};
-margin:0 auto;
+width:100%;
 padding-bottom: 1rem;
 text-align: center;
-
-${props => props.theme.media.tabletUp} {
-    width: ${props => props.theme.width.medium};
-  };
-
-  ${props => props.theme.media.desktopXLUp} {
-    width: ${props => props.theme.width.large};
-  };
 `
 
 export const Line = styled.span`
 display:block;
-width: 80%;
+width: 100%;
 height: 1px;
 background: #fff;
 margin: 0 auto 1.5rem auto;

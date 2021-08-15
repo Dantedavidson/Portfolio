@@ -1,7 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import DOMPurify from 'dompurify';
-import { Flipped, spring } from "react-flip-toolkit"
+import {  Flipped, spring } from "react-flip-toolkit"
+
 import {
   CardWrap,
   ImageWrap,
@@ -29,9 +30,40 @@ function Card({ data }) {
   } = data
   const cleanHtml = DOMPurify.sanitize(html)
   const image = getImage(projectImage)
-  console.log(liveSite,sourceCode)
+
+  const onElementAppear = (el, index) => {
+    return spring({
+      onUpdate: val => {
+        el.style.opacity = val
+      },
+      delay: index * 50,
+    })
+  }
+
+  const onExit = () => (el, index, removeElement) => {
+    console.log(index)
+    spring({
+      config: { overshootClamping: true },
+      onUpdate: val => {
+        el.style.opacity = `${0.7 - val}`
+      },
+      delay: index * 50,
+      onComplete: removeElement,
+    })
+  
+    return () => {
+      el.style.opacity = ""
+      removeElement()
+    }
+  }
+ 
   return (
     <>
+    <Flipped
+      flipId="flip-item" 
+      onAppear={onElementAppear} 
+      onExit={onExit()}
+    >
       <CardWrap>
         <ImageWrap>
           <Image image={image} alt={alt} />
@@ -47,6 +79,8 @@ function Card({ data }) {
           <List dangerouslySetInnerHTML={{ __html: cleanHtml}} />
         </ContentWrap>
       </CardWrap>
+
+      </Flipped>
     </>
   )
 }
