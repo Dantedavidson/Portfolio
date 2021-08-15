@@ -18,13 +18,16 @@ export const Title = styled.h2`
 
 export const TagContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 3rem;
+
 `
 
 export const Tag = styled.div`
   padding: 0.5rem 0.8rem;
   border: 1px solid #fff;
   margin-right: 0.5rem;
+  margin-bottom: .5rem;
   cursor: pointer;
   transition: 200ms ease-in;
   color: ${({ active }) => (active ? "#000" : "")};

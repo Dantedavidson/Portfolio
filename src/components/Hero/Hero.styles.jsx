@@ -37,19 +37,19 @@ export const Grid = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 2.25rem;
+  font-size: 3rem;
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   font-family: "STIX Two Text", serif;
   ${props => props.theme.media.desktopUp} {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: left;
   }
 
   ${props => props.theme.media.desktopXLUp} {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
 `
 
@@ -69,22 +69,22 @@ export const Text = styled.p`
 
 export const Image = styled(GatsbyImage)`
   justify-self: center;
-  width: 250px;
+  width: 300px;
   border-radius: 50%;
   grid-row-start: 1;
 
   ${props => props.theme.media.desktopUp} {
-    width: 275px;
+    width: 325px;
     grid-column-start: 2;
     justify-self: end;
   }
 
   ${props => props.theme.media.desktopXLUp} {
-    width: 315px;
+    width: 375px;
   }
 `
 
-export const Button = styled.div`
+export const Button = styled.a`
   display: inline-block;
   position: relative;
   width: 80%;

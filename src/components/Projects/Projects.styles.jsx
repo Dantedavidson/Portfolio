@@ -8,10 +8,12 @@ export const ProjectSection = styled(Section)`
   margin-bottom: 3rem;
 `
 export const CardContainer = styled.div`
+display: grid;
+row-gap: 3rem;
   ${props => props.theme.media.desktopUp} {
-    display: grid;
+    
     grid-template-columns: 48% 48%;
     column-gap: 4%;
-    row-gap: 3rem;
+    
   }
 `

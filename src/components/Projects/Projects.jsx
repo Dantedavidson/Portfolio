@@ -15,7 +15,7 @@ function Projects({ posts }) {
 
 
   return (
-    <ProjectSection>
+    <ProjectSection id="projects">
       <Filter onClick={onClick} filter={filter}/>
       <Flipper
         flipKey={`${filter}`}

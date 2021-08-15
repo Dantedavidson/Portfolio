@@ -7,6 +7,10 @@ export default createGlobalStyle`
     padding:0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     background-color: ${({ theme }) => theme.background};
     color:${({ theme }) => theme.textLight};

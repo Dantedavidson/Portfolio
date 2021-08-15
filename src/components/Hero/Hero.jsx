@@ -29,7 +29,7 @@ function Hero({ data }) {
             <Title>{title}</Title>
             <Text>{text}</Text>
           </Container>
-          <Button>Projects</Button>
+          <Button href="#projects">Projects</Button>
         </FlexContainer>
         <Image image={image} alt={alt} />
       </Grid>
