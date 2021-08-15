@@ -23,8 +23,8 @@ export const Nav = styled.nav`
   ${props => props.theme.media.mobileDown} {
     text-align: center;
     transition: all 600ms ease;
-    height: ${({ display }) => (display ? "10.65rem" : "0")};
-    margin-top: ${({ display }) => (display ? "10vh" : "0")};
+    height: ${({ $display }) => ($display ? "10.65rem" : "0")};
+    margin-top: ${({ $display }) => ($display ? "10vh" : "0")};
     overflow: hidden;
   }
 
@@ -54,7 +54,7 @@ export const NavItems = styled.ul`
 
   ${props => props.theme.media.mobileDown} {
     transition: all 600ms ease;
-    opacity: ${({ display }) => (display ? "1" : "0")};
+    opacity: ${({ $display }) => ($display ? "1" : "0")};
     &:nth-child(2) {
       margin: auto;
     }
@@ -101,16 +101,16 @@ export const NavToggleWrapper = styled.div`
   }
 
   span:nth-child(1) {
-    transform: ${({ display }) => (display ? "rotate(45deg);" : "")};
+    transform: ${({ $display }) => ($display ? "rotate(45deg);" : "")};
   }
   span:nth-child(2) {
     top: 50%;
     transform: translateY(-1px);
-    opacity: ${({ display }) => (display ? 0 : 1)};
+    opacity: ${({ $display }) => ($display ? 0 : 1)};
   }
   span:nth-child(3) {
     bottom: 0;
-    transform: ${({ display }) => (display ? "rotate(-45deg);" : "")};
+    transform: ${({ $display }) => ($display ? "rotate(-45deg);" : "")};
   }
 
   ${props => props.theme.media.tabletUp} {

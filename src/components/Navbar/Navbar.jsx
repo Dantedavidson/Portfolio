@@ -34,8 +34,8 @@ function Navbar() {
   return (
     <>
       <NavWrapper>
-        <Nav display={displayMobileNav}>
-          <NavItems display={displayMobileNav}>
+        <Nav $display={displayMobileNav}>
+          <NavItems $display={displayMobileNav}>
             {/* <CV href={cv} download> */}
             <NavItem>
               CV
@@ -49,7 +49,7 @@ function Navbar() {
               Contact
             </NavItem>
           </NavItems>
-          <NavItems display={displayMobileNav}>
+          <NavItems $display={displayMobileNav}>
             <IconContext.Provider value={{ size: "1.3em" }}>
               <SocialIcon
                 href="https://au.linkedin.com/in/dante-davidson-daniele-54a1ab213"
@@ -66,7 +66,7 @@ function Navbar() {
             </IconContext.Provider>
           </NavItems>
         </Nav>
-        <NavToggleWrapper onClick={handleClick} display={displayMobileNav}>
+        <NavToggleWrapper onClick={handleClick} $display={displayMobileNav}>
           <NavToggle />
           <NavToggle />
           <NavToggle />

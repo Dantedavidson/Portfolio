@@ -3,6 +3,7 @@
   "textLight": "#fff",
   "fontMain": "'Roboto', sans-serif",
   "fontHighlight": "'STIX Two Text', serif",
+  "fontDull":"grey",
   "width": {
     "small": "100%",
     "medium": "80%",

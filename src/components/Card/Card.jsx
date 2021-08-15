@@ -1,5 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import DOMPurify from 'dompurify';
 import { Flipped, spring } from "react-flip-toolkit"
 import {
   CardWrap,
@@ -23,24 +24,27 @@ function Card({ data }) {
     projectFeatures: {
       childMarkdownRemark: { html },
     },
+    liveSite,
+    sourceCode
   } = data
+  const cleanHtml = DOMPurify.sanitize(html)
   const image = getImage(projectImage)
-  console.log(image)
+  console.log(liveSite,sourceCode)
   return (
     <>
       <CardWrap>
         <ImageWrap>
           <Image image={image} alt={alt} />
           <ButtonWrap>
-            <Button />
-            <Button />
+            <Button href={liveSite} target="_blank" >Live Site</Button>
+            <Button href={sourceCode} target="_blank">Source Code</Button>
           </ButtonWrap>
         </ImageWrap>
         <ContentWrap>
           <Header>{title}</Header>
           <Description>{brief}</Description>
           <SubHeader>Project Features</SubHeader>
-          <List />
+          <List dangerouslySetInnerHTML={{ __html: cleanHtml}} />
         </ContentWrap>
       </CardWrap>
     </>

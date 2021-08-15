@@ -4,6 +4,7 @@ import GlobalStyles from "../styles/GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import theme from "../styles/Theme.json"
 import { Navbar, Hero, Projects } from "../components/index"
+import { Footer } from "../components/index"
 
 export default function Home({ data }) {
   console.log(data)
@@ -20,44 +21,47 @@ export default function Home({ data }) {
       <Navbar />
       <Hero data={lead[0]} />
       <Projects posts={posts} />
+      <Footer/>
     </ThemeProvider>
   )
 }
 
 export const query = graphql`
-  query PageData {
-    allContentfulLead {
-      group(field: contentful_id) {
-        nodes {
-          title
-          portrait {
-            description
-            gatsbyImageData
-          }
-          text {
-            text
-          }
+query PageData {
+  allContentfulPortfolioPost {
+    nodes {
+      tags
+      title
+      subHeading
+      projectImage {
+        description
+        gatsbyImageData
+      }
+      projectBrief {
+        projectBrief
+      }
+      projectFeatures {
+        childMarkdownRemark {
+          html
         }
       }
+      sourceCode
+      liveSite
     }
-    allContentfulPortfolioPost {
+  }
+  allContentfulLead {
+    group(field: contentful_id) {
       nodes {
-        tags
         title
-        subHeading
-        projectImage {
+        portrait {
           description
           gatsbyImageData
         }
-        projectBrief {
-          projectBrief
-        }
-        projectFeatures {
-          childMarkdownRemark {
-            html
-          }
+        text {
+          text
         }
       }
     }
   }
+}
 `
