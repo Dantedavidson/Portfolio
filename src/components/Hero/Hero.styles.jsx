@@ -74,6 +74,7 @@ border-radius: 50%;
 -moz-border-radius: 50%;
 -webkit-border-radius: 50%;
 justify-self: center;
+border: 1px solid transparent;
 overflow:hidden;
 
 ${props => props.theme.media.desktopUp} {
@@ -86,11 +87,16 @@ ${props => props.theme.media.desktopUp} {
 
 export const Image = styled(GatsbyImage)`
   width: 300px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  vertical-align: middle;
  
-
+   img{
+    -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+   }
   ${props => props.theme.media.desktopUp} {
     width: 325px;
    
