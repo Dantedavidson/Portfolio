@@ -69,8 +69,10 @@ export const Text = styled.p`
 
 //needed for safari 
 export const ImageWrap = styled.div`
- grid-row-start: 1;
+grid-row-start: 1;
 border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
 justify-self: center;
 overflow:hidden;
 
@@ -83,9 +85,10 @@ ${props => props.theme.media.desktopUp} {
 `
 
 export const Image = styled(GatsbyImage)`
-  
   width: 300px;
-  
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
  
 
   ${props => props.theme.media.desktopUp} {
