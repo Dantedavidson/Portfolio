@@ -71,6 +71,8 @@ export const Image = styled(GatsbyImage)`
   justify-self: center;
   width: 300px;
   border-radius: 50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius: 50%;
   grid-row-start: 1;
 
   ${props => props.theme.media.desktopUp} {
