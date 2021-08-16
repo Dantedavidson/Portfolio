@@ -2,11 +2,32 @@ import React from "react"
 import { navigate } from "gatsby";
 import {Helmet} from "react-helmet";
 import { graphql } from "gatsby"
+import styled from "styled-components";
 import GlobalStyles from "../styles/GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import theme from "../styles/Theme.json"
 import { Navbar,Footer} from "../components/index"
-import {ErrorWrapper,ErrorText,ErrorLink} from "./404.styles"
+
+
+const ErrorWrapper = styled.div`
+width:100%;
+height: 90vh;
+text-align: center;
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+`
+const ErrorText = styled.h1`
+
+`
+const ErrorLink = styled.span`
+color:grey;
+cursor:pointer;
+transition:all 300ms ease;
+&:hover{
+    color: #fff;
+}
+`
 
 
 
