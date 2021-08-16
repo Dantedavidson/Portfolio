@@ -67,18 +67,30 @@ export const Text = styled.p`
   }
 `
 
+//needed for safari 
+export const ImageWrap = styled.div`
+ grid-row-start: 1;
+border-radius: 50%;
+justify-self: center;
+overflow:hidden;
+
+${props => props.theme.media.desktopUp} {
+    
+    grid-column-start: 2;
+    justify-self: end;
+  }
+
+`
+
 export const Image = styled(GatsbyImage)`
-  justify-self: center;
+  
   width: 300px;
-  border-radius: 50%;
-  -moz-border-radius:50%;
-  -webkit-border-radius: 50%;
-  grid-row-start: 1;
+  
+ 
 
   ${props => props.theme.media.desktopUp} {
     width: 325px;
-    grid-column-start: 2;
-    justify-self: end;
+   
   }
 
   ${props => props.theme.media.desktopXLUp} {

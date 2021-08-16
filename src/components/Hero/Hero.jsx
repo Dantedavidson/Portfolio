@@ -9,6 +9,7 @@ import {
   Text,
   Button,
   Image,
+  ImageWrap
 } from "./Hero.styles"
 
 function Hero({ data }) {
@@ -31,7 +32,9 @@ function Hero({ data }) {
           </Container>
           <Button href="#projects">Projects</Button>
         </FlexContainer>
+        <ImageWrap>
         <Image image={image} alt={alt} />
+        </ImageWrap>
       </Grid>
     </HeroSection>
   )
