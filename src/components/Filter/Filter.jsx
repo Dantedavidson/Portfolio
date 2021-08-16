@@ -18,7 +18,7 @@ function Filter({ onClick ,filter }) {
       <Title>Projects</Title>
       <TagContainer>
         <Tag
-          active
+          active={filter==="all"}
           onClick={() => {
             onClick("all",filter)
           }}
@@ -30,6 +30,7 @@ function Filter({ onClick ,filter }) {
             onClick={() => {
               onClick(tag.fieldValue,filter)
             }}
+            active={filter===tag.fieldValue}
             key={index}
           >
             {tag.fieldValue}

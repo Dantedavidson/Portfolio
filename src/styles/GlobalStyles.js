@@ -21,6 +21,20 @@ body{
   
  }
 
+ h3{
+   font-size: 1.5rem;
+ }
+
+ h4{
+   font-size: 1.25rem;
+ }
+
+ li, p {
+   font-size: 1.2rem;
+   
+   
+ }
+
 a {
     text-decoration: none;
   color: inherit;

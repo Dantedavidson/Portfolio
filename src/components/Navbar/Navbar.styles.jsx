@@ -16,7 +16,7 @@ export const NavWrapper = styled.div`
 
 export const Nav = styled.nav`
   position: relative;
-  font-size: 2rem;
+  
   padding-top: ${props => props.theme.padding.small};
 
   //Mobile styles
@@ -71,6 +71,19 @@ export const NavItems = styled.ul`
   }
 `
 
+export const LiWrapper= styled.li`
+font-size: 2rem;
+
+${props => props.theme.media.tabletUp} {
+    font-size: 1.5rem;
+    &:nth-child(2) {
+      margin-left: 2rem;
+    }
+  }
+
+  
+`
+
 export const NavItem = styled.a`
   cursor: pointer;
 
@@ -78,11 +91,7 @@ export const NavItem = styled.a`
     color: ${props => darken(0.2, props.theme.textLight)};
   }
 
-  ${props => props.theme.media.tabletUp} {
-    &:nth-child(2) {
-      margin-left: 2rem;
-    }
-  }
+  
 `
 
 export const NavToggleWrapper = styled.div`

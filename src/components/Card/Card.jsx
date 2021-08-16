@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import DOMPurify from 'dompurify';
+
 import {  Flipped, spring } from "react-flip-toolkit"
 
 import {
@@ -28,7 +28,7 @@ function Card({ data }) {
     liveSite,
     sourceCode
   } = data
-  const cleanHtml = DOMPurify.sanitize(html)
+  
   const image = getImage(projectImage)
 
   const onElementAppear = (el, index) => {
@@ -76,7 +76,7 @@ function Card({ data }) {
           <Header>{title}</Header>
           <Description>{brief}</Description>
           <SubHeader>Project Features</SubHeader>
-          <List dangerouslySetInnerHTML={{ __html: cleanHtml}} />
+          <List dangerouslySetInnerHTML={{ __html: html}} />
         </ContentWrap>
       </CardWrap>
 

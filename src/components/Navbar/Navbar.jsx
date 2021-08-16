@@ -3,6 +3,7 @@ import {
   NavWrapper,
   Nav,
   NavItems,
+  LiWrapper,
   NavItem,
   NavToggleWrapper,
   NavToggle,
@@ -11,7 +12,7 @@ import {
 import { FaDownload, FaLinkedin, FaGithubSquare } from "react-icons/fa"
 import { IconContext } from "react-icons"
 // import cv from "../../../static/portfolio.pdf"
-import { Link } from "react-router-dom"
+
 
 function Navbar() {
   const [displayMobileNav, setDisplayMobileNav] = useState(false)
@@ -19,7 +20,7 @@ function Navbar() {
   const handleClick = () => setDisplayMobileNav(!displayMobileNav)
 
   const showNav = () => {
-    if (window.innerWidth < 639) {
+    if (typeof window !== `undefined` && window?.innerWidth < 639) {
       setDisplayMobileNav(false)
     } else {
       setDisplayMobileNav(true)
@@ -29,14 +30,15 @@ function Navbar() {
   useEffect(() => {
     showNav()
   }, [])
-
-  window.addEventListener("resize", showNav)
+ if(typeof window !== `undefined`){
+  window.addEventListener("resize", showNav)}
   return (
     <>
       <NavWrapper>
         <Nav $display={displayMobileNav}>
           <NavItems $display={displayMobileNav}>
             {/* <CV href={cv} download> */}
+            <LiWrapper>
             <NavItem>
               CV
               <IconContext.Provider
@@ -45,24 +47,33 @@ function Navbar() {
                 <FaDownload />
               </IconContext.Provider>
             </NavItem>
+            </LiWrapper>
+            <LiWrapper>
             <NavItem href="mailto:dantedavidsondaniele@gmail.com">
               Contact
             </NavItem>
+            </LiWrapper>
           </NavItems>
           <NavItems $display={displayMobileNav}>
             <IconContext.Provider value={{ size: "1.3em" }}>
+              <LiWrapper>
               <SocialIcon
                 href="https://au.linkedin.com/in/dante-davidson-daniele-54a1ab213"
                 target="_blank"
+                aria-label="Linkedin"
               >
                 <FaLinkedin />
               </SocialIcon>
+              </LiWrapper>
+              <LiWrapper>
               <SocialIcon
                 href="https://github.com/Dantedavidson"
                 target="_blank"
+                aria-label="Github"
               >
                 <FaGithubSquare />
               </SocialIcon>
+              </LiWrapper>
             </IconContext.Provider>
           </NavItems>
         </Nav>

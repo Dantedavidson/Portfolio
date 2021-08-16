@@ -73,6 +73,7 @@ ul  {
   padding-left: 1em;
 }
 li{
+  
   margin-bottom:.5rem;
 }
 `;
