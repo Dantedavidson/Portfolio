@@ -18,6 +18,19 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.GA_PROPERTY_ID, 
+        ],
+      
+        pluginConfig: {
+          head:true,
+         
+        },
+      },
+    },
   ],
   siteMetadata:{
     title:"Dante's Portfolio",

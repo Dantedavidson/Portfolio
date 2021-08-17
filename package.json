@@ -17,6 +17,7 @@
     "babel-plugin-styled-components": "^1.13.2",
     "dotenv": "^10.0.0",
     "gatsby": "^3.11.1",
+    "gatsby-plugin-google-gtag": "^3.11.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-netlify": "^3.11.0",
     "gatsby-plugin-react-helmet": "^4.11.0",
