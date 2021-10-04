@@ -11,8 +11,7 @@ import {
 } from "./Navbar.styles"
 import { FaDownload, FaLinkedin, FaGithubSquare } from "react-icons/fa"
 import { IconContext } from "react-icons"
-// import cv from "../../../static/portfolio.pdf"
-
+import cv from "../../../static/DanteCV.pdf"
 
 function Navbar() {
   const [displayMobileNav, setDisplayMobileNav] = useState(false)
@@ -30,8 +29,9 @@ function Navbar() {
   useEffect(() => {
     showNav()
   }, [])
- if(typeof window !== `undefined`){
-  window.addEventListener("resize", showNav)}
+  if (typeof window !== `undefined`) {
+    window.addEventListener("resize", showNav)
+  }
   return (
     <>
       <NavWrapper>
@@ -39,40 +39,42 @@ function Navbar() {
           <NavItems $display={displayMobileNav}>
             {/* <CV href={cv} download> */}
             <LiWrapper>
-            <NavItem>
-              CV
-              <IconContext.Provider
-                value={{ size: ".7em", style: { marginLeft: ".5rem" } }}
-              >
-                <FaDownload />
-              </IconContext.Provider>
-            </NavItem>
+              <NavItem>
+                CV
+                <a download href={`${cv}`}>
+                  <IconContext.Provider
+                    value={{ size: ".7em", style: { marginLeft: ".5rem" } }}
+                  >
+                    <FaDownload />
+                  </IconContext.Provider>
+                </a>
+              </NavItem>
             </LiWrapper>
             <LiWrapper>
-            <NavItem href="mailto:dantedavidsondaniele@gmail.com">
-              Contact
-            </NavItem>
+              <NavItem href="mailto:dantedavidsondaniele@gmail.com">
+                Contact
+              </NavItem>
             </LiWrapper>
           </NavItems>
           <NavItems $display={displayMobileNav}>
             <IconContext.Provider value={{ size: "1.3em" }}>
               <LiWrapper>
-              <SocialIcon
-                href="https://au.linkedin.com/in/dante-davidson-daniele-54a1ab213"
-                target="_blank"
-                aria-label="Linkedin"
-              >
-                <FaLinkedin />
-              </SocialIcon>
+                <SocialIcon
+                  href="https://au.linkedin.com/in/dante-davidson-daniele-54a1ab213"
+                  target="_blank"
+                  aria-label="Linkedin"
+                >
+                  <FaLinkedin />
+                </SocialIcon>
               </LiWrapper>
               <LiWrapper>
-              <SocialIcon
-                href="https://github.com/Dantedavidson"
-                target="_blank"
-                aria-label="Github"
-              >
-                <FaGithubSquare />
-              </SocialIcon>
+                <SocialIcon
+                  href="https://github.com/Dantedavidson"
+                  target="_blank"
+                  aria-label="Github"
+                >
+                  <FaGithubSquare />
+                </SocialIcon>
               </LiWrapper>
             </IconContext.Provider>
           </NavItems>
