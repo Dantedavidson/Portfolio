@@ -37,17 +37,14 @@ function Navbar() {
       <NavWrapper>
         <Nav $display={displayMobileNav}>
           <NavItems $display={displayMobileNav}>
-            {/* <CV href={cv} download> */}
             <LiWrapper>
-              <NavItem>
+              <NavItem download href={`${cv}`}>
                 CV
-                <a download href={`${cv}`}>
-                  <IconContext.Provider
-                    value={{ size: ".7em", style: { marginLeft: ".5rem" } }}
-                  >
-                    <FaDownload />
-                  </IconContext.Provider>
-                </a>
+                <IconContext.Provider
+                  value={{ size: ".7em", style: { marginLeft: ".5rem" } }}
+                >
+                  <FaDownload />
+                </IconContext.Provider>
               </NavItem>
             </LiWrapper>
             <LiWrapper>
