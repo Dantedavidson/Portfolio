@@ -11,7 +11,7 @@ import {
 } from "./Navbar.styles"
 import { FaDownload, FaLinkedin, FaGithubSquare } from "react-icons/fa"
 import { IconContext } from "react-icons"
-import cv from "../../../static/DanteCV.pdf"
+import cv from "../../../static/CV_Dante_Davidson_Daniele.pdf"
 
 function Navbar() {
   const [displayMobileNav, setDisplayMobileNav] = useState(false)
